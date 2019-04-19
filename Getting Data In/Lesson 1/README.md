@@ -1,9 +1,45 @@
 # Splunk PTS 2019 - GDI - Lesson 1
-Test HEC from the command line.
+Creating and testing HEC
 
-## *nix/Mac
+## Create
+From Splunk Web:
+
+  * Settings -> Data inputs
+  * Click HTTP Event Collector
+  * Click New Token
+    * Name = PTS
+    * Source name override - leave blank
+    * Description - leave blank
+    * Output Group - None
+    * Enable indexer acknowledgement - unchecked
+  * Click Next
+    * Source type - Automatic
+    * App Context - Search & Reporting
+    * Seect Allowed Indexes - leave as-is
+    * Default Index - Default
+  * Click Review
+  * Clikc Submit
+
+## Enable
+From Splunk Web:
+
+  * Settings -> Data inputs
+  * Click HTTP Event Collector
+  * Click Global Settings
+    * All Tokens - Enabled
+    * Default Source Type - leave as-is
+    * Default Index - Default
+    * Default Output Group - None
+    * Use Deployment Server - unchecked
+    * Enable SSL - unchecked
+    * HTTP Port Number 8088
+  * Click Save
+
+## Test
+
+### *nix/Mac
     curl -k http://localhost:8088/services/collector -H 'Authorization: Splunk <token>' -d '{"sourcetype": "mysourcetype", "event":"Hello, World!"}'
 
-## Windows PowerShell
+### Windows PowerShell
     Invoke-WebRequest -Uri "http://127.0.0.1:8088/services/collector" -Headers @{"Authorization"="Splunk <token>"} -Method Post -Body '{"sourcetype":"mysourcetype","event":"Hello World!"}'
 
