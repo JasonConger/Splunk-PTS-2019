@@ -1,4 +1,5 @@
 # Splunk PTS 2019 - GDI - Lesson 1
+Test HEC from the command line.
 
 ## *nix/Mac
     curl -k http://localhost:8088/services/collector -H 'Authorization: Splunk <token>' -d '{"sourcetype": "mysourcetype", "event":"Hello, World!"}'
