@@ -18,7 +18,8 @@ From Splunk Web:
     * Seect Allowed Indexes - leave as-is
     * Default Index - Default
   * Click Review
-  * Clikc Submit
+  * Click Submit
+  * Copy the Token Value
 
 ## Enable
 From Splunk Web:
