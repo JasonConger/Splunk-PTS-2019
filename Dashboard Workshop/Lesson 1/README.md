@@ -16,6 +16,7 @@ enableWebDebug = True
 ```
 
 ## Disable Caching in your browser debug capabilities
+Example below from the Google Chrome browser:
 
 ![browser cache](https://github.com/JasonConger/Splunk-PTS-2019/raw/master/images/browser_cache.png "browser cache")
 
