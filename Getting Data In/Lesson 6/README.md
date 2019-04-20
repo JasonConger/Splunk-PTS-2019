@@ -159,4 +159,21 @@ def collect_events(helper, ew):
 ```
 
 * Click the "Test" button.
-* Click the "Finish" button. 
+* Click the "Finish" button.
+
+## Change Setup Field Labels
+"Username" and "password" labels don't really apply here.  We want to change these to "Client ID" and "Client Secret"
+
+* Open `$SPLUNK_HOME/etc/apps/TA-pts/appserver/static/js/build/globalConfig.json`
+* ~ lines 35 to 45 change `username` to `Client ID` (DO NOT change the field name)
+  * `"errorMsg": "Length of Client ID should be between 1 and 200", `
+  * `"help": "Enter the Client ID for this account.", `
+  * `"field": "username",`
+  * `"label": "Client ID",`
+* ~ lines 53 to 59 change `password` to `Client Secret` (DO NOT change the field name)
+  * `"errorMsg": "Length of Client Secret should be between 1 and 8192",`
+  * `"help": "Enter the Client Secret for this account.", `
+  * `"field": "password",` 
+  * `"label": "Client Secret",`
+* ~ line 78 change `"label": "Username",`. to `"label": "Client ID",`
+* Save the file
