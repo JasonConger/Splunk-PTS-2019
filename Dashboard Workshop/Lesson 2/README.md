@@ -28,5 +28,81 @@ Conditionally show a dashboard panel
 * Add Input > Text
   * Label = IP Address:
   * Token = ipaddr
+* Apply
 
 ![new Splunk input](https://github.com/JasonConger/Splunk-PTS-2019/raw/master/images/Textbox.png "new Splunk input")
+
+## Add a Submit Button
+* Add Input > Submit
+
+## Create Global Search
+* Click the "Source" button next to "Edit Dashboard"
+* Paste the following after `</fieldset>`
+
+```xml
+<search id="map_search">
+  <query>
+    | makeresults | eval ipaddr="$ipaddr$" | iplocation ipaddr
+  </query>
+</search>
+```
+
+## Add a Row, Table Panel, and Map Panel
+Paste the following after `</search>`
+
+```xml
+<row>
+  <panel>
+    <table>
+      <title>IP Address Details</title>
+        <search base="map_search"></search>
+    </table>
+  </panel>
+    
+  <panel>
+    <map>
+      <title>The map shows up if geostats can determine lat and lon</title>
+      <search base="map_search">
+        <query>geostats count by ipaddr</query>
+      </search>
+    </map>
+  </panel>
+</row>
+```
+
+## Test
+If you have not already saved the form, save it now.
+
+* IP Address = 54.69.58.243 > Submit
+
+You should see data in the table and the map.
+
+* IP Address = 127.0.0.1 > Sumbit
+
+You should see data in the table, but not the map.
+
+## Conditionally show the map
+Showing an empty map may be confusing, so we will hide if if we cannot map it.
+
+* Edit the dashboard
+* Add the following between `</query>` and `</search>`
+
+```xml
+<progress>
+  <condition match='$result.lat$!=""'>
+    <set token="show_map">true</set>
+  </condition>
+  <condition>
+    <unset token="show_map"></unset>
+  </condition>
+</progress>
+```
+
+* Add `depends="$show_map$"` to the map panel.  Like this:
+
+```xml
+<panel depends="$show_map$">
+  <map>
+```
+
+* Test again.  This time, the map should not be visible for the 127.0.0.1 address.

@@ -1,0 +1,38 @@
+<form>
+  <label>PTS Example</label>
+  <description>PTS Example Dashboard</description>
+  <search id="map_search">
+    <query>
+    | makeresults | eval ipaddr="$ipaddr$" | iplocation ipaddr
+  </query>
+    <progress>
+      <condition match="$result.lat$!=&quot;&quot;">
+        <set token="show_map">true</set>
+      </condition>
+      <condition>
+        <unset token="show_map"></unset>
+      </condition>
+    </progress>
+  </search>
+  <fieldset submitButton="true" autoRun="false">
+    <input type="text" token="ipaddr">
+      <label>IP Address:</label>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <table>
+        <title>IP Address Details</title>
+        <search base="map_search"></search>
+      </table>
+    </panel>
+    <panel depends="$show_map$">
+      <map>
+        <title>The map shows up if geostats can determine lat and lon</title>
+        <search base="map_search">
+          <query>geostats count by ipaddr</query>
+        </search>
+      </map>
+    </panel>
+  </row>
+</form>
