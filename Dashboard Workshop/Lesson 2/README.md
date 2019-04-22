@@ -106,3 +106,6 @@ Showing an empty map may be confusing, so we will hide if if we cannot map it.
 ```
 
 * Test again.  This time, the map should not be visible for the 127.0.0.1 address.
+
+### Complete Example
+[https://raw.githubusercontent.com/JasonConger/Splunk-PTS-2019/master/Dashboard%20Workshop/Lesson%202/pts/local/data/ui/views/pts_example.xml](https://raw.githubusercontent.com/JasonConger/Splunk-PTS-2019/master/Dashboard%20Workshop/Lesson%202/pts/local/data/ui/views/pts_example.xml)
