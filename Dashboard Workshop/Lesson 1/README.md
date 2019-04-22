@@ -20,7 +20,7 @@ Example below from the Google Chrome browser:
 
 ![browser cache](https://github.com/JasonConger/Splunk-PTS-2019/raw/master/images/browser_cache.png "browser cache")
 
-## JavaScript - force a break point when debugging
+## [Example] JavaScript - force a break point when debugging
 
 ```javascript
 function reduce_links() {
