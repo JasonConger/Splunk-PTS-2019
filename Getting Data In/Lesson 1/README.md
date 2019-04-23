@@ -1,5 +1,5 @@
 # Splunk PTS 2019 - GDI - Lesson 1
-Creating and testing HEC
+Creating and testing HEC.
 
 ## Create
 From Splunk Web:

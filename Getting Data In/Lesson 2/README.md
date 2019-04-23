@@ -1,6 +1,6 @@
 # Splunk PTS 2019 - GDI - Lesson 2
 
-Send a HEC token in the URL as a query string parameter
+Send a HEC token in the URL as a query string parameter.
 
 ## Enable
 

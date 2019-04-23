@@ -1,6 +1,6 @@
 # Splunk PTS 2019 - GDI - Lesson 5
 
-Pro Tip - using ngrok to test external to internal HEC
+Pro Tip - using ngrok to test external to internal HEC.
 
 ## Download ngrok
 [https://ngrok.com](https://ngrok.com)
