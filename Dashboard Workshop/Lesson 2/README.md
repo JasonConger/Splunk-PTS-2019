@@ -28,6 +28,7 @@ Conditionally show a dashboard panel
 * Add Input > Text
   * Label = IP Address:
   * Token = ipaddr
+  * Default = 54.69.58.243
 * Apply
 
 ![new Splunk input](https://github.com/JasonConger/Splunk-PTS-2019/raw/master/images/Textbox.png "new Splunk input")
