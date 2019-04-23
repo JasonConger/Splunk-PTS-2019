@@ -8,7 +8,7 @@ Use Splunk Add-on Builder to create a modular input that queries a REST API usin
 ## Create an Add-on
 * Launch Splunk Add-on Builder from Splunk Web
 * Click the "New Add-on" button
-  * Add-on Name = PTS
+  * Add-on Name = PTS Add-on
 * Click Create
 
 ## Create a Data Input
