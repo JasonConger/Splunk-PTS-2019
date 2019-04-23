@@ -14,9 +14,10 @@
       </condition>
     </progress>
   </search>
-  <fieldset submitButton="true" autoRun="false">
+  <fieldset submitButton="true" autoRun="true">
     <input type="text" token="ipaddr">
       <label>IP Address:</label>
+      <default>54.69.58.243</default>
     </input>
   </fieldset>
   <row>
