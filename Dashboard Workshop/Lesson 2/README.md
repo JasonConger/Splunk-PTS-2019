@@ -24,7 +24,7 @@ Conditionally show a dashboard panel
   * Permissions = Shared in App
 * Create Dashboard
 
-## Add an Input
+### Add an Input
 * Add Input > Text
   * Label = IP Address:
   * Token = ipaddr
@@ -33,8 +33,11 @@ Conditionally show a dashboard panel
 
 ![new Splunk input](https://github.com/JasonConger/Splunk-PTS-2019/raw/master/images/Textbox.png "new Splunk input")
 
-## Add a Submit Button
+### Add a Submit Button
 * Add Input > Submit
+
+### Set the Dashboard to Autorun
+![autorun](https://github.com/JasonConger/Splunk-PTS-2019/raw/master/images/autorun.png "autorun")
 
 ## Create Global Search
 * Click the "Source" button next to "Edit Dashboard"
