@@ -6,7 +6,7 @@
 ## Simple XML
 * Edit the dashboard from Lesson 1
 * Select source view
-* Add a new gobal search
+* Add a new global search
 
 ```xml
 <search id="main">
