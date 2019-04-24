@@ -100,6 +100,6 @@ for(var i=0, l=results.length; i<l; i++) { \
 * Refresh the dashboard
 * The table is now also a list
 
-> **Note**: notice you can chain multiple JavaScript file references together using a coma.
+> **Note**: notice you can chain multiple JavaScript file references together using a comma.
 
 ![list result](https://github.com/JasonConger/Splunk-PTS-2019/raw/master/images/table_list.png "list result")
