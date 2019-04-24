@@ -41,7 +41,7 @@ This will be used for the chart in the modal popup.
 </search>
 ```
 
-### Add a drilldown the the tooltip table between `</search>` and `</table>` to set a token
+### Add a drilldown to the tooltip table between `</search>` and `</table>` to set a token
 The value of the token will be the sourcetype of the row clicked.
 
 ```xml
