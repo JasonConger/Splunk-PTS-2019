@@ -51,6 +51,8 @@ Conditionally show a dashboard panel
 </search>
 ```
 
+> **Note**: the search takes the value of the field and runs iplocation to resolve City, Country, Region, lat, and lon
+
 ## Add a Row, Table Panel, and Map Panel
 Paste the following after `</search>`
 
@@ -75,15 +77,11 @@ Paste the following after `</search>`
 ```
 
 ## Test
-If you have not already saved the form, save it now.
 
-* IP Address = 54.69.58.243 > Submit
-
-You should see data in the table and the map.
-
-* IP Address = 127.0.0.1 > Sumbit
-
-You should see data in the table, but not the map.
+* If you have not already saved the form, save it now
+* You should see data in the table and the map
+* Change the IP Address to 127.0.0.1 and click Sumbit
+* You should see data in the table, but not the map
 
 ## Conditionally show the map
 Showing an empty map may be confusing, so we will hide if if we cannot map it.
@@ -110,6 +108,8 @@ Showing an empty map may be confusing, so we will hide if if we cannot map it.
 ```
 
 * Test again.  This time, the map should not be visible for the 127.0.0.1 address.
+
+> **Note**: the above is an event handler for the search.  The actual value of the token does not make a difference.  The only condition we test is whether the token is set or not.
 
 ### Complete Example
 [https://github.com/JasonConger/Splunk-PTS-2019/blob/master/Dashboard%20Workshop/Lesson%202/pts/local/data/ui/views/pts_example.xml](https://github.com/JasonConger/Splunk-PTS-2019/blob/master/Dashboard%20Workshop/Lesson%202/pts/local/data/ui/views/pts_example.xml)
