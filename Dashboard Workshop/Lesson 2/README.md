@@ -84,7 +84,7 @@ Paste the following after `</search>`
 * You should see data in the table, but not the map
 
 ## Conditionally show the map
-Showing an empty map may be confusing, so we will hide if if we cannot map it.
+Showing an empty map may be confusing, so we will hide it if we cannot map it.
 
 * Edit the dashboard
 * Add the following between `</query>` and `</search>`
