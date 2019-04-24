@@ -1,0 +1,110 @@
+<form stylesheet="tooltip.css,toggle.css" script="tooltip.js,table2list.js,toggle.js,set_input_types.js">
+  <label>PTS Example</label>
+  <description>PTS Example Dashboard</description>
+  <search id="map_search">
+    <query>
+    | makeresults | eval ipaddr="$ipaddr$" | iplocation ipaddr
+  </query>
+    <progress>
+      <condition match="$result.lat$!=&quot;&quot;">
+        <set token="show_map">true</set>
+      </condition>
+      <condition>
+        <unset token="show_map"></unset>
+      </condition>
+    </progress>
+  </search>
+  <search id="main">
+    <query>index=_internal |
+        stats count by index host source sourcetype |
+        eval really_long_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit diam, efficitur a sem at, varius euismod risus. Nullam vitae consequat orci. Mauris vulputate diam et lectus laoreet, ac sodales enim auctor. Nulla facilisi. Donec dictum varius augue ut finibus. Ut sed dapibus sapien, vitae tempor mi. Vestibulum mollis metus sit amet sapien semper sollicitudin sed ut ligula. Ut quam risus, cursus non elit id, luctus consectetur lorem. Donec non risus risus. Etiam a massa tellus. Donec sit amet vulputate urna. Mauris at semper nisi, et semper velit. Aenean quis diam leo.  Proin augue lacus, tincidunt id consectetur id, facilisis a orci. Nunc condimentum elementum lectus at consectetur. Curabitur sit amet mi nunc. Sed sollicitudin consectetur bibendum. Nullam ullamcorper mi ut tincidunt aliquet. Phasellus rutrum magna ante, non laoreet risus fringilla ac. Maecenas tempor lectus elit, eu laoreet massa vehicula a. Maecenas vel pharetra eros. Fusce vulputate pharetra sagittis."</query>
+    <earliest>-24h@h</earliest>
+    <latest>now</latest>
+  </search>
+  <fieldset submitButton="true" autoRun="true">
+    <input type="text" token="ipaddr">
+      <label>IP Address:</label>
+      <default>54.69.58.243</default>
+    </input>
+    <input type="text" token="numbers" id="numbers_only" searchWhenChanged="true">
+      <label>Numbers only</label>
+      <default>1</default>
+    </input>
+    
+    <input type="text" token="numbers_0_100" id="numbers_0_100_step10" searchWhenChanged="true">
+      <label>Numbers 0-100 step=10</label>
+      <default>0</default>
+    </input>
+    
+    <input type="text" token="date" id="date" searchWhenChanged="true">
+      <label>Date</label>
+    </input>
+    
+    <input type="text" token="date_restrictions" id="date_restrictions" searchWhenChanged="true">
+      <label>Date after 2018-08-01</label>
+    </input>
+    
+    <input type="text" token="range" id="range" searchWhenChanged="true">
+      <label>Range (0-10)</label>
+      <default>5</default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <table>
+        <title>IP Address Details</title>
+        <search base="map_search"></search>
+      </table>
+      <html>
+        <h3 class="dashboard-element-title">IP Address Details (table pivot)</h3>
+        <div id="list-view"/>
+      </html>
+      <html>
+          <div style="float: right">
+              Show/hide the table below  <img id="imgToggle1" class="toggle" title="Show/hide table below" src="/static/app/pts/expand.png"/>
+          </div>
+        </html>
+    </panel>
+    <panel depends="$show_map$">
+      <map>
+        <title>The map shows up if geostats can determine lat and lon</title>
+        <search base="map_search">
+          <query>geostats count by ipaddr</query>
+        </search>
+      </map>
+    </panel>
+  </row>
+  <row id="tooltip_row">
+    <panel>
+      <table id="tblTooltip">
+        <title>Table with tool tips</title>
+        <search base="main">
+          <query>table index  sourcetype really_long_text source | rename really_long_text AS "Message"</query>
+        </search>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <!-- Button to trigger modal -->
+    <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+     
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Modal header</h3>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+      </html>
+    </panel>
+  </row>
+</form>
