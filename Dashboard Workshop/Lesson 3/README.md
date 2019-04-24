@@ -7,7 +7,7 @@
 * Copy the code
 * Edit the dashboard from Lesson 1
 * Select source view
-* Add the following code beofre the `</form>` tag
+* Add the following code before the `</form>` tag
 
 ```xml
 <row>
