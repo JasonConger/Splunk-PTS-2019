@@ -114,3 +114,4 @@ require(['splunkjs/mvc/simplexml/ready!'], function(){
 ```
 * Save
 * Refresh the dashboard
+* Click image next to the text "Show/hide the table below" to expand/collapse the table.
