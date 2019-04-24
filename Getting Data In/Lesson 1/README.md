@@ -8,15 +8,15 @@ From Splunk Web:
   * Click HTTP Event Collector
   * Click New Token
     * Name = PTS
-    * Source name override - leave blank
-    * Description - leave blank
-    * Output Group - None
-    * Enable indexer acknowledgement - unchecked
+    * Source name override = leave blank
+    * Description = leave blank
+    * Output Group = None
+    * Enable indexer acknowledgement = unchecked
   * Click Next
-    * Source type - Automatic
-    * App Context - Search & Reporting
-    * Seect Allowed Indexes - leave as-is
-    * Default Index - Default
+    * Source type = Automatic
+    * App Context = Search & Reporting
+    * Select Allowed Indexes = leave as-is
+    * Default Index = Default
   * Click Review
   * Click Submit
   * Copy the Token Value
@@ -27,12 +27,12 @@ From Splunk Web:
   * Settings -> Data inputs
   * Click HTTP Event Collector
   * Click Global Settings
-    * All Tokens - Enabled
-    * Default Source Type - leave as-is
-    * Default Index - Default
-    * Default Output Group - None
-    * Use Deployment Server - unchecked
-    * Enable SSL - unchecked
+    * All Tokens = Enabled
+    * Default Source Type = leave as-is
+    * Default Index = Default
+    * Default Output Group = None
+    * Use Deployment Server = unchecked
+    * Enable SSL = unchecked
     * HTTP Port Number 8088
   * Click Save
 
