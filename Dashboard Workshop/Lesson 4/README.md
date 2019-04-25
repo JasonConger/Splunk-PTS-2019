@@ -46,7 +46,7 @@
 
 * Save
 
-##JavaScript
+## JavaScript
 * Create a file named `autodiscover.js` in `$SPLUNK_HOME/etc/apps/pts/appserver/static`
 
 copypasta
