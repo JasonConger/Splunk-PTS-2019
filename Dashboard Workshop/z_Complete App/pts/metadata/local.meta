@@ -6,7 +6,83 @@ modtime = 1555955552.756920000
 version = 7.2.4
 modtime = 1555955552.759045000
 
-[views/pts_example]
+[nav/default]
+version = 7.2.4
+modtime = 1556231569.148478000
+
+[views/1]
+access = read : [ * ], write : [ admin ]
+export = none
 owner = admin
 version = 7.2.4
-modtime = 1556080051.155508000
+modtime = 1556227771.422676000
+
+[views/2]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 7.2.4
+modtime = 1556229973.903589000
+
+[views/3]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 7.2.4
+modtime = 1556230012.628963000
+
+[views/4]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 7.2.4
+modtime = 1556227790.693481000
+
+[views/5]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 7.2.4
+modtime = 1556227796.825737000
+
+[views/6]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 7.2.4
+modtime = 1556227870.681957000
+
+[views/7]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 7.2.4
+modtime = 1556227950.201257000
+
+[views/8]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 7.2.4
+modtime = 1556235896.392919000
+
+[views/attributes]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 7.2.4
+modtime = 1556228212.726238000
+
+[views/carousel1]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 7.2.4
+modtime = 1556228286.381949000
+
+[views/carousel2]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 7.2.4
+modtime = 1556228310.527633000

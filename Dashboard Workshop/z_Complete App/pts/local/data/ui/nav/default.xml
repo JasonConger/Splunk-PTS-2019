@@ -1,0 +1,17 @@
+<nav search_view="search">
+  <collection label="Lessons">
+  	<view name="1" />
+  	<view name="2" />
+  	<view name="3" />
+  	<view name="4" />
+  	<view name="5" />
+  	<view name="6" />
+  	<view name="7" />
+  	<view name="8" />
+  </collection>
+  <collection label="Bonus">
+    <view name="attributes" />
+    <view name="carousel1" />
+  </collection>
+  <view name="search" />
+</nav>

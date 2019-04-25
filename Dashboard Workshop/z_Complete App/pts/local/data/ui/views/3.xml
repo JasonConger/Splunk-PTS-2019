@@ -1,0 +1,62 @@
+<form>
+  <label>3. Bootstrap Modal</label>
+  <description>PTS Example Dashboard</description>
+  <search id="map_search">
+    <query>
+    | makeresults | eval ipaddr="$ipaddr$" | iplocation ipaddr
+  </query>
+    <progress>
+      <condition match="$result.lat$!=&quot;&quot;">
+        <set token="show_map">true</set>
+      </condition>
+      <condition>
+        <unset token="show_map"></unset>
+      </condition>
+    </progress>
+  </search>
+  <fieldset submitButton="true" autoRun="true">
+    <input type="text" token="ipaddr">
+      <label>IP Address:</label>
+      <default>54.69.58.243</default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <table>
+        <title>IP Address Details</title>
+        <search base="map_search"></search>
+      </table>
+    </panel>
+    <panel depends="$show_map$">
+      <map>
+        <title>The map shows up if geostats can determine lat and lon</title>
+        <search base="map_search">
+          <query>geostats count by ipaddr</query>
+        </search>
+      </map>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <!-- Button to trigger modal -->
+    <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+     
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Modal header</h3>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+      </html>
+    </panel>
+  </row>
+</form>
