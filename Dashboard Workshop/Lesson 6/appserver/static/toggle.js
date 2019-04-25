@@ -17,14 +17,16 @@ require(['splunkjs/mvc/simplexml/ready!'], function(){
 			if(target.css("height") == "0px" ) {
 				button.attr("src", "/static/app/pts/collapse.png");
 				target.css({
-					"height": "auto"
+					"height": "auto",
+					"overflow": "visible"
 				});
 			}
 			else
 			{
 				button.attr("src", "/static/app/pts/expand.png");
 				target.css({
-					"height": "0px"
+					"height": "0px",
+					"overflow": "hidden"
 				});
 			}
 		}
