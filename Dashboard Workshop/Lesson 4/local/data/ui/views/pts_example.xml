@@ -1,4 +1,4 @@
-<form>
+<form stylesheet="tooltip.css" script="tooltip.js">
   <label>PTS Example</label>
   <description>PTS Example Dashboard</description>
   <search id="map_search">
