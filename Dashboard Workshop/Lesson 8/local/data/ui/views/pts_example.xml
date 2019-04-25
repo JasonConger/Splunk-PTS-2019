@@ -18,8 +18,8 @@
     <query>
       index=_internal sourcetype=$chart_sourcetype$ | timechart count
     </query>
-    <earliest>rt-5m</earliest>
-    <latest>rtnow</latest>
+    <earliest>-4h</earliest>
+    <latest>now</latest>
   </search>
   <search id="main">
     <query>index=_internal |
