@@ -26,12 +26,15 @@ require([
         tableView.table.render();
 	});
 	
+	var areaChart = new ChartView({id: "chart-view"});
+	
 	// Listen for token changes
 	var tokens = mvc.Components.get("default");
 	tokens.on("change:chart_sourcetype", function(model, value, options) {
 
 		$('#modalChart').modal();
-
+		
+		mvc.Components.get("chart-view").remove();
 		var areaChart = new ChartView({
 			id: "chart-view",
 			managerid: "chart_search",
@@ -41,7 +44,4 @@ require([
 		}).render();
 
 	});
-	
-	
-	
 });
