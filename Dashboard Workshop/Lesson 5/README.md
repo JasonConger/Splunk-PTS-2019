@@ -86,7 +86,7 @@ for(var i=0, l=results.length; i<l; i++) { \
 ```
 * Save
 
-> **Note**: The DavaView uses the template string to render the data.  The template string can be whatever you want.  This example uses [Underscore.js](https://underscorejs.org/) to programmatically create the string.
+> **Note**: The DataView uses the template string to render the data.  The template string can be whatever you want.  This example uses [Underscore.js](https://underscorejs.org/) to programmatically create the string.
 
 
 ## Wire things up
