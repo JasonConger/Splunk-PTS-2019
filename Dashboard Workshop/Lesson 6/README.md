@@ -8,16 +8,22 @@ In this lesson, we will add an interactive toggle button to the dashboard to sho
 
 * Add the following HTML:
 
-> Existing
+> Before
 
 ```xml
+    <html>
+        <h3 class="dashboard-element-title">IP Address Details (table pivot)</h3>
         <div id="list-view"/>
-      </html>
+    </html>
 ```
 
-> New
+> After
 
 ```xml
+      <html>
+        <h3 class="dashboard-element-title">IP Address Details (table pivot)</h3>
+        <div id="list-view"/>
+      </html>
       <html>
 	      <div style="float: right">
 		      Show/hide the table below  <img id="imgToggle1" class="toggle" title="Show/hide table below" src="/static/app/pts/expand.png"/>
@@ -26,7 +32,7 @@ In this lesson, we will add an interactive toggle button to the dashboard to sho
 ```
 
 
-* Add `id=tooltip_row` to the row containing the tooltip table like so:
+* Add `id="tooltip_row"` to the row containing the tooltip table like so:
 
 ```xml
 <row id="tooltip_row">
@@ -62,14 +68,16 @@ require(['splunkjs/mvc/simplexml/ready!'], function(){
 			if(target.css("height") == "0px" ) {
 				button.attr("src", "/static/app/pts/collapse.png");
 				target.css({
-					"height": "auto"
+					"height": "auto",
+					"overflow": "visible"
 				});
 			}
 			else
 			{
 				button.attr("src", "/static/app/pts/expand.png");
 				target.css({
-					"height": "0px"
+					"height": "0px",
+					"overflow": "hidden"
 				});
 			}
 		}
