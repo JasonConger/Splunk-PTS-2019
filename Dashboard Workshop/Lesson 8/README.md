@@ -1,7 +1,7 @@
 # Splunk PTS 2019 - Dashboards - Lesson 8
 
 ## Putting it all together
-In this lesson, we will listen for token changes in JavaScript and pop up a modal dialog with a real-time chart in it.
+In this lesson, we will listen for token changes in JavaScript and pop up a modal dialog with a chart in it.
 
 ## Set up the Simple XML
 * Edit the form source
@@ -33,11 +33,12 @@ This will be used for the chart in the modal popup.
 
 ```xml
 <search id="chart_search">
-  <query>
-    index=_internal sourcetype=$chart_sourcetype$ | timechart count
-  </query>
-  <earliest>rt-5m</earliest>
-  <latest>rtnow</latest>
+    <query>
+      index=_internal sourcetype=$chart_sourcetype$ | timechart count
+    </query>
+    <earliest>-4h</earliest>
+    <latest>now</latest>
+  </search>rtnow</latest>
 </search>
 ```
 
@@ -99,6 +100,7 @@ require([
     'splunkjs/mvc/simplexml/ready!'
 ], function(_, $, mvc, TableView, ChartView) {
 
+
 	var CustomIconRenderer = TableView.BaseCellRenderer.extend({
 		canRender: function(cell) {
 			return cell.field === 'Detail';
@@ -117,12 +119,15 @@ require([
         tableView.table.render();
 	});
 	
+	var areaChart = new ChartView({id: "chart-view"});
+	
 	// Listen for token changes
 	var tokens = mvc.Components.get("default");
 	tokens.on("change:chart_sourcetype", function(model, value, options) {
 
 		$('#modalChart').modal();
-
+		
+		mvc.Components.get("chart-view").remove();
 		var areaChart = new ChartView({
 			id: "chart-view",
 			managerid: "chart_search",
@@ -132,9 +137,6 @@ require([
 		}).render();
 
 	});
-	
-	
-	
 });
 ```
 * Save
