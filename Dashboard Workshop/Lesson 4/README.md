@@ -122,7 +122,7 @@ copypasta
 }
 ```
 
-## Write up the Simple XML to the JavaScript
+## Wire up the Simple XML to the JavaScript
 
 * Refresh Splunk after adding the .js and .css files
   * `$SPLUNK_HOME/bin/splunk restart`
