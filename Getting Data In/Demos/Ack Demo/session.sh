@@ -1,0 +1,6 @@
+#doitlive speed: 100
+curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk a11ab867-beb7-47e4-a46b-a2982cd6c316' -H "X-Splunk-Request-Channel: FE1ECFAD-13D5-401B-847D-77833BD77131" -d '{"event":"Hello, Basic Ack World!", "sourcetype":"mysourcetype"}'
+curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk a11ab867-beb7-47e4-a46b-a2982cd6c316' -H "X-Splunk-Request-Channel: FE1ECFAD-13D5-401B-847D-77833BD77131" -d '{"event":"Hello, Basic Ack World?", "sourcetype":"mysourcetype"}'
+curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk a11ab867-beb7-47e4-a46b-a2982cd6c316' -H "X-Splunk-Request-Channel: FE1ECFAD-13D5-401B-847D-77833BD77131" -d '{"event":"Hello, Basic Ack World???", "sourcetype":"mysourcetype"}'
+curl -k https://localhost:8088/services/collector/ack -H 'Authorization: Splunk a11ab867-beb7-47e4-a46b-a2982cd6c316' -H "X-Splunk-Request-Channel: FE1ECFAD-13D5-401B-847D-77833BD77131" -d '{"acks":[0,1,2]}'
+curl -k https://localhost:8088/services/collector/ack -H 'Authorization: Splunk a11ab867-beb7-47e4-a46b-a2982cd6c316' -H "X-Splunk-Request-Channel: FE1ECFAD-13D5-401B-847D-77833BD77131" -d '{"acks":[0,1,2]}'
