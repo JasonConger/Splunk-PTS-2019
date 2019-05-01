@@ -32,15 +32,15 @@ From Splunk Web:
     * Default Index = Default
     * Default Output Group = None
     * Use Deployment Server = unchecked
-    * Enable SSL = unchecked
+    * Enable SSL = checked
     * HTTP Port Number 8088
   * Click Save
 
 ## Test
 
 ### *nix/Mac
-    curl -k http://localhost:8088/services/collector -H 'Authorization: Splunk <token>' -d '{"sourcetype": "mysourcetype", "event":"Hello, World!"}'
+    curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk <token>' -d '{"sourcetype": "mysourcetype", "event":"Hello, World!"}'
 
 ### Windows PowerShell
-    Invoke-WebRequest -Uri "http://127.0.0.1:8088/services/collector" -Headers @{"Authorization"="Splunk <token>"} -Method Post -Body '{"sourcetype":"mysourcetype","event":"Hello World!"}'
+    Invoke-WebRequest -Uri "https://127.0.0.1:8088/services/collector" -Headers @{"Authorization"="Splunk <token>"} -Method Post -Body '{"sourcetype":"mysourcetype","event":"Hello World!"}'
 

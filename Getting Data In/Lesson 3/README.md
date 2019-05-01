@@ -9,7 +9,11 @@ Create a token with a custom name.
 
 Test the token.
 
-    curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk <token>' -d '{"event":"Hello, Basic Token World!"}'
+    curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk <token>' -d '{"event":"Hello, Basic Token World!", "sourcetype": "mysourcetype"}'
+
+Check the results in the Splunk search
+    
+    sourcetype=mysourcetype"
 
 ## Token with specific params
 We will create a token with a cusotm name that is disabled on creation with a description.
@@ -22,7 +26,11 @@ We can enable this token in a subsequent request.
 
 Test the token. (After enabling)
 
-    curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk <token>' -d '{"event":"Hello, Specific Token World!"}'
+    curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk <token>' -d '{"event":"Hello, Specific Token World!", "sourcetype": "mysourcetype"}'
+
+Check the results in the Splunk search
+    
+    sourcetype=mysourcetype"
 
 Need to open up Pandora's box to see how this works. Look at all these parameters we can send with our Create/Edit requests! http://dev.splunk.com/view/event-collector/SP-CAAAE7C#editanhttpeventcollectortokenusingcurl
 
@@ -37,13 +45,21 @@ Copy paste a GUID from here: https://www.guidgenerator.com/online-guid-generator
 
 Test the token.
 
-    curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk <token>' -d '{"event":"Hello, Custom GUID World!"}'
+    curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk <token>' -d '{"event":"Hello, Custom GUID World!", "sourcetype": "mysourcetype"}'
+
+Check the results in the Splunk search
+    
+    sourcetype=mysourcetype"
 
 ## (Bonus) Custom value token?!
-Do we validate for a GUID? No, but custom values are NOT recommended/supported.
+Do we validate if a custom value is actually a GUID? No, but custom values are NOT recommended/supported.
 
 	curl -k -u admin:password https://localhost:8089/servicesNS/admin/splunk_httpinput/data/inputs/http -d name=custom_value_token -d token=whateveriwant
 
 Test the token.
 
-    curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk whateveriwant' -d '{"event":"Hello, Custom Token World!"}'
+    curl -k https://localhost:8088/services/collector -H 'Authorization: Splunk whateveriwant' -d '{"event":"Hello, Custom Token World!", "sourcetype": "mysourcetype"}'
+
+Check the results in the Splunk search
+    
+    sourcetype=mysourcetype"
