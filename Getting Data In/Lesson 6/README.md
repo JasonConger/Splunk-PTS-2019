@@ -122,11 +122,11 @@ def get_items(helper, access_token, url, items=[]):
 
 ## Test
 
-* Tenant ID = 
-* Subscription ID = 
+* Tenant ID = 2ed28a74-1f6f-4829-8530-fe359c77d35c
+* Subscription ID = ae4ab7c9-dcdf-4427-9729-48e8c7551be9
 * Add-on Setup Parameters
-  * Username (app id) = 
-  * Password (app key) = 
+  * Username (app id) = 838ce3f0-3331-495b-aacf-b49ceb733483
+  * Password (app key) = D-ppEq*wNu-YTR4F_43f5OC2+-x8Fi2O
 
 Paste the following for `collect_events`:
 
