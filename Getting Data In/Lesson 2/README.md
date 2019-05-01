@@ -21,4 +21,4 @@ Disable/enable your token after making the above change.
 
 Check the results in the Splunk search
     
-    sourcetype=mysourcetype"
+    sourcetype="mysourcetype"
