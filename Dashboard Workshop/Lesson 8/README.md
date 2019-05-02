@@ -38,7 +38,6 @@ This will be used for the chart in the modal popup.
     </query>
     <earliest>-4h</earliest>
     <latest>now</latest>
-  </search>rtnow</latest>
 </search>
 ```
 
